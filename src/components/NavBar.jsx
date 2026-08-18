@@ -7,7 +7,7 @@ import { MENU_LIST } from "../constants/menu";
 
 // 모든 페이지에 공통으로 보이는 네비게이션 바.
 // App.jsx의 <Routes> "바깥"에 두었기 때문에, 페이지가 바뀌어도 이 부분은 남아 있습니다.
-function NavBar() {
+function Navbar() {
   const navigate = useNavigate();
 
   return (
