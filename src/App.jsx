@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar";
 import ProductAllPage from "./pages/ProductAllPage";
 import LoginPage from "./pages/LoginPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
