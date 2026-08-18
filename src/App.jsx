@@ -1,17 +1,17 @@
 import { Routes, Route } from "react-router";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import ProductAllPage from "./pages/ProductAllPage";
-import LoginPage from "./pages/LoginPage";
-import ProductDetailPage from "./pages/ProductDetailPage";
+import NavBar from "./components/NavBar.jsx";
+import ProductAllPage from "./pages/ProductAllPage.jsx";
+import LoginPage from "./pages/LoginPage.jsx";
+import ProductDetailPage from "./pages/ProductDetailPage.jsx";
 
 function App() {
   return (
     <>
-      {/* Navbar는 <Routes> 바깥에 있으므로 페이지가 바뀌어도 그대로 남습니다.
-          각 페이지마다 Navbar를 넣으면 중복이 생기고, 페이지 전환 때마다
+      {/* NavBar는 <Routes> 바깥에 있으므로 페이지가 바뀌어도 그대로 남습니다.
+          각 페이지마다 NavBar를 넣으면 중복이 생기고, 페이지 전환 때마다
           네비게이션이 다시 그려져 깜빡입니다. */}
-      <Navbar />
+      <NavBar />
 
       <main className="page">
         <Routes>

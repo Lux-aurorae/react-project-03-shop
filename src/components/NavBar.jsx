@@ -2,12 +2,12 @@ import { Link, useNavigate } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
-import Monogram from "./Monogram";
-import { MENU_LIST } from "../constants/menu";
+import Monogram from "./Monogram.jsx";
+import { MENU_LIST } from "../constants/menu.js";
 
 // 모든 페이지에 공통으로 보이는 네비게이션 바.
 // App.jsx의 <Routes> "바깥"에 두었기 때문에, 페이지가 바뀌어도 이 부분은 남아 있습니다.
-function Navbar() {
+function NavBar() {
   const navigate = useNavigate();
 
   return (
@@ -55,4 +55,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;

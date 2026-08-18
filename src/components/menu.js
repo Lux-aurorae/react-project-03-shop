@@ -11,3 +11,4 @@ export const MENU_LIST = [
   "컬렉션",
   "메종 스토리",
 ];
+ 
