@@ -1,0 +1,194 @@
+/* ===========================================================
+   MAISON PIANO — 프랑스 럭셔리 메종 톤
+   코냑 브라운 · 크림 · 얇은 금선 · 넓은 자간의 세리프
+   =========================================================== */
+
+:root {
+  --cognac: #6b4423;      /* 코냑 브라운 — 브랜드 주색 */
+  --cognac-deep: #4a2e17;
+  --cream: #f4f0e8;       /* 크림 — 바탕 */
+  --cream-warm: #ece5d8;
+  --gold: #b8964f;        /* 금선 */
+  --gold-dim: rgba(184, 150, 79, 0.32);
+  --ink: #1c1613;         /* 본문 */
+  --ink-dim: rgba(28, 22, 19, 0.55);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+/* ===========================================================
+   네비게이션
+   =========================================================== */
+.nav {
+  background: var(--cream);
+  border-bottom: 1px solid var(--gold-dim);
+  padding: 0 clamp(20px, 5vw, 56px);
+}
+
+/* ── 1행 계정 ─────────────────────────────────── */
+.nav__top {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 0;
+}
+
+.nav__account {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 4px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-dim);
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+
+.nav__account:hover { color: var(--cognac); }
+.nav__account:focus-visible { outline: 1px solid var(--cognac); outline-offset: 4px; }
+
+/* ── 2행 로고 ─────────────────────────────────── */
+.nav__brand {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0 26px;
+}
+
+.nav__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  color: var(--cognac);
+}
+
+.monogram { display: block; }
+
+.nav__wordmark {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  line-height: 1;
+  color: var(--cognac);
+}
+
+.nav__tagline {
+  font-size: 0.56rem;
+  letter-spacing: 0.26em;
+  text-indent: 0.26em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* ── 3행 메뉴 + 검색 ──────────────────────────── */
+.nav__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 16px;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;   /* 불릿 제거 */
+}
+
+.menu__item {
+  position: relative;
+  padding: 8px 14px;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+
+/* 밑줄이 가운데에서 양옆으로 자라는 효과 */
+.menu__item::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 3px;
+  height: 1px;
+  background: var(--cognac);
+  transform: scaleX(0);
+  transition: transform 0.35s var(--ease);
+}
+
+.menu__item:hover { color: var(--cognac); }
+.menu__item:hover::after { transform: scaleX(1); }
+
+/* ── 검색 ─────────────────────────────────────── */
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: clamp(180px, 24vw, 250px);
+  border-bottom: 1px solid var(--gold-dim);
+  transition: border-color 0.3s var(--ease);
+}
+
+.search:focus-within { border-color: var(--cognac); }
+
+.search__icon {
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+  pointer-events: none;
+}
+
+.search__input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 0 8px 10px;
+  font-family: inherit;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+  background: none;
+  border: none;
+}
+
+.search__input::placeholder { color: var(--ink-dim); letter-spacing: 0.06em; }
+.search__input:focus { outline: none; }
+
+/* ===========================================================
+   페이지 영역
+   =========================================================== */
+.page {
+  padding: clamp(28px, 6vw, 60px) clamp(20px, 5vw, 56px);
+  min-height: 60vh;
+}
+
+/* ===========================================================
+   반응형
+   =========================================================== */
+@media (max-width: 720px) {
+  .nav__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
+  .menu { justify-content: center; }
+  .search { width: 100%; }
+  .nav__wordmark { letter-spacing: 0.22em; text-indent: 0.22em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
