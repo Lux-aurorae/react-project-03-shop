@@ -6,18 +6,34 @@ import Monogram from "./Monogram.jsx";
 import { MENU_LIST } from "../constants/menu.js";
 
 // 모든 페이지에 공통으로 보이는 네비게이션 바.
-// App.jsx의 <Routes> "바깥"에 두었기 때문에, 페이지가 바뀌어도 이 부분은 남아 있습니다.
-function NavBar() {
+// authenticate 값에 따라 버튼이 로그인 ↔ 로그아웃으로 바뀝니다.
+function NavBar({ authenticate, setAuthenticate }) {
   const navigate = useNavigate();
+
+  const goToLogin = () => {
+    navigate("/login");
+  };
+
+  const logout = () => {
+    setAuthenticate(false);
+    navigate("/");
+  };
 
   return (
     <header className="nav">
       {/* 1행 — 계정 영역 (우측 정렬) */}
       <div className="nav__top">
-        <button className="nav__account" onClick={() => navigate("/login")}>
-          <FontAwesomeIcon icon={faUser} />
-          <span>로그인</span>
-        </button>
+        {authenticate ? (
+          <button className="nav__account" onClick={logout}>
+            <FontAwesomeIcon icon={faUser} />
+            <span>로그아웃</span>
+          </button>
+        ) : (
+          <button className="nav__account" onClick={goToLogin}>
+            <FontAwesomeIcon icon={faUser} />
+            <span>로그인</span>
+          </button>
+        )}
       </div>
 
       {/* 2행 — 메종 로고 (중앙) */}

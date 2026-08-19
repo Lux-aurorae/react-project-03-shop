@@ -192,3 +192,394 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ===========================================================
+   히어로
+   =========================================================== */
+.hero {
+  max-width: 620px;
+  margin: 0 auto clamp(36px, 7vw, 64px);
+  text-align: center;
+}
+
+.hero__eyebrow {
+  margin: 0 0 14px;
+  font-size: 0.58rem;
+  letter-spacing: 0.34em;
+  text-indent: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero__title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 300;
+  font-size: clamp(1.9rem, 6vw, 2.9rem);
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  color: var(--cognac-deep);
+}
+
+.hero__lead {
+  margin: 18px auto 0;
+  max-width: 46ch;
+  font-size: 0.86rem;
+  line-height: 1.9;
+  color: var(--ink-dim);
+}
+
+/* ===========================================================
+   상품 그리드
+   =========================================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.4vw, 30px);
+}
+
+/* ── 카드 ─────────────────────────────────────── */
+.card {
+  cursor: pointer;
+  background: transparent;
+  transition: transform 0.5s var(--ease);
+}
+
+/* [검사 3] 마우스를 올리면 카드가 커집니다 */
+.card:hover { transform: translateY(-8px) scale(1.035); }
+
+.card__art {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: grid;
+  place-items: center;
+  padding: 12px;
+  background: var(--cream-warm);
+  border: 1px solid transparent;
+  overflow: hidden;
+  transition: background 0.5s var(--ease), border-color 0.5s var(--ease);
+}
+
+.card:hover .card__art {
+  background: #f8f5ee;
+  border-color: var(--gold-dim);
+}
+
+.art {
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s var(--ease);
+}
+
+.card:hover .art { transform: scale(1.06); }
+
+/* ── 배지 ─────────────────────────────────────── */
+.card__badges {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-size: 0.56rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(244, 240, 232, 0.92);
+  border: 1px solid var(--gold-dim);
+}
+
+.badge--choice { color: #3f6b47; }
+.badge--new { color: var(--cognac); border-color: var(--cognac); }
+
+.badge__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4d8257;
+}
+
+/* ── 카드 본문 ────────────────────────────────── */
+.card__body { padding: 16px 2px 0; }
+
+.card__brand {
+  margin: 0;
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.card__title {
+  margin: 8px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.08rem;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+.card__origin {
+  margin: 6px 0 0;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+}
+
+.card__price {
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--gold-dim);
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--cognac);
+}
+
+/* ── 로딩 뼈대 ────────────────────────────────── */
+.skeleton {
+  aspect-ratio: 4 / 3;
+  background: linear-gradient(100deg, var(--cream-warm) 30%, #f8f5ee 50%, var(--cream-warm) 70%);
+  background-size: 300% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+.skeleton--wide { aspect-ratio: 16 / 7; }
+
+@keyframes shimmer {
+  from { background-position: 150% 0; }
+  to   { background-position: -50% 0; }
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 40px 0;
+  text-align: center;
+  font-size: 0.86rem;
+  color: var(--ink-dim);
+}
+
+/* ===========================================================
+   로그인
+   =========================================================== */
+.login {
+  max-width: 380px;
+  margin: 0 auto;
+  padding: clamp(20px, 5vw, 40px) 0;
+}
+
+.login__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--cognac);
+  margin-bottom: 34px;
+}
+
+.login__title {
+  margin: 14px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
+}
+
+.login__lead {
+  margin: 12px 0 0;
+  font-size: 0.76rem;
+  line-height: 1.9;
+  color: var(--ink-dim);
+}
+
+.login__form { display: flex; flex-direction: column; gap: 20px; }
+
+.field { display: flex; flex-direction: column; gap: 8px; }
+
+.field__label {
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.field__input {
+  padding: 10px 2px;
+  font-size: 0.86rem;
+  color: var(--ink);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--gold-dim);
+  transition: border-color 0.3s var(--ease);
+}
+
+.field__input::placeholder { color: rgba(28, 22, 19, 0.32); }
+.field__input:focus { outline: none; border-color: var(--cognac); }
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+  cursor: pointer;
+}
+
+.check input { accent-color: var(--cognac); cursor: pointer; }
+
+.login__note {
+  margin: 0;
+  font-size: 0.66rem;
+  line-height: 1.7;
+  text-align: center;
+  color: var(--ink-dim);
+}
+
+/* ===========================================================
+   버튼
+   =========================================================== */
+.btn {
+  padding: 13px 30px;
+  font-family: inherit;
+  font-size: 0.74rem;
+  letter-spacing: 0.22em;
+  text-indent: 0.22em;
+  color: var(--cognac);
+  background: transparent;
+  border: 1px solid var(--cognac);
+  cursor: pointer;
+  transition: background 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+.btn:hover { background: var(--cognac); color: var(--cream); }
+.btn:focus-visible { outline: 1px solid var(--cognac); outline-offset: 4px; }
+
+.btn--fill { background: var(--cognac); color: var(--cream); }
+.btn--fill:hover { background: var(--cognac-deep); border-color: var(--cognac-deep); }
+
+/* ===========================================================
+   상세 페이지
+   =========================================================== */
+.detail { max-width: 940px; margin: 0 auto; }
+
+.crumb {
+  margin-bottom: 26px;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-dim);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+
+.crumb:hover { color: var(--cognac); }
+
+.detail__grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(24px, 5vw, 56px);
+  align-items: center;
+}
+
+.detail__art {
+  display: grid;
+  place-items: center;
+  padding: 26px;
+  background: var(--cream-warm);
+  border: 1px solid var(--gold-dim);
+}
+
+.detail__brand {
+  margin: 16px 0 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.detail__title {
+  margin: 10px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  line-height: 1.25;
+}
+
+.detail__origin {
+  margin: 8px 0 0;
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+}
+
+.detail__price {
+  margin: 22px 0 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--gold-dim);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--cognac);
+}
+
+.detail__text {
+  margin: 16px 0 0;
+  font-size: 0.82rem;
+  line-height: 1.95;
+  color: var(--ink-dim);
+}
+
+.detail__finish { margin: 26px 0; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+
+.chip {
+  padding: 7px 14px;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  border: 1px solid var(--gold-dim);
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.chip:hover { border-color: var(--cognac); color: var(--cognac); }
+
+/* ===========================================================
+   푸터
+   =========================================================== */
+.foot {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 28px clamp(20px, 5vw, 56px);
+  border-top: 1px solid var(--gold-dim);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+/* ===========================================================
+   반응형
+   =========================================================== */
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .detail__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .grid { grid-template-columns: 1fr; gap: 26px; }
+}

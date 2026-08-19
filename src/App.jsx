@@ -1,26 +1,35 @@
+import { useState } from "react";
 import { Routes, Route } from "react-router";
 import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import ProductAllPage from "./pages/ProductAllPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
-import ProductDetailPage from "./pages/ProductDetailPage.jsx";
+import PrivateRoute from "./routes/PrivateRoute.jsx";
 
 function App() {
+  // 로그인 상태. false = 미로그인, true = 로그인 완료.
+  // 이 state는 App이 소유하고, 필요한 곳에 props로 내려보냅니다.
+  const [authenticate, setAuthenticate] = useState(false);
+
   return (
     <>
-      {/* NavBar는 <Routes> 바깥에 있으므로 페이지가 바뀌어도 그대로 남습니다.
-          각 페이지마다 NavBar를 넣으면 중복이 생기고, 페이지 전환 때마다
-          네비게이션이 다시 그려져 깜빡입니다. */}
-      <NavBar />
+      {/* NavBar는 <Routes> 바깥에 있으므로 페이지가 바뀌어도 그대로 남습니다. */}
+      <NavBar authenticate={authenticate} setAuthenticate={setAuthenticate} />
 
       <main className="page">
         <Routes>
           <Route path="/" element={<ProductAllPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          {/* :id 는 URL 파라미터. /product/1, /product/2 모두 이 페이지로 옵니다 */}
-          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/login" element={<LoginPage setAuthenticate={setAuthenticate} />} />
+          {/* 상세 페이지는 PrivateRoute가 감쌉니다.
+              로그인 안 했으면 안쪽 페이지 대신 /login으로 보내집니다. */}
+          <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate} />} />
         </Routes>
       </main>
+
+      <footer className="foot">
+        <span>MAISON PIANO</span>
+        <span>Grands Pianos du Monde · Séoul</span>
+      </footer>
     </>
   );
 }

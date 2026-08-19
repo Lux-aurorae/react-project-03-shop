@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "brand": "Steinway & Sons",
+      "title": "Model D-274 Concert Grand",
+      "country": "Hamburg, Germany",
+      "founded": 1853,
+      "price": 218000000,
+      "finish": "#141110",
+      "choice": true,
+      "new": false,
+      "sizes": ["Ebony Polish", "Walnut Satin", "Macassar"],
+      "detail": "274cm 콘서트 그랜드. 전 세계 콘서트홀의 사실상 표준으로, 깊은 저음과 고른 배음이 특징입니다."
+    },
+    {
+      "id": "2",
+      "brand": "Bösendorfer",
+      "title": "Imperial 290 Grand",
+      "country": "Wiener Neustadt, Austria",
+      "founded": 1828,
+      "price": 265000000,
+      "finish": "#2b1d14",
+      "choice": true,
+      "new": false,
+      "sizes": ["Ebony Polish", "Vienna Walnut"],
+      "detail": "97건반 임페리얼. 일반 피아노보다 9개 많은 저음 건반이 공명을 확장합니다."
+    },
+    {
+      "id": "3",
+      "brand": "Fazioli",
+      "title": "F308 Gran Coda",
+      "country": "Sacile, Italy",
+      "founded": 1981,
+      "price": 312000000,
+      "finish": "#1a1614",
+      "choice": true,
+      "new": true,
+      "sizes": ["Ebony Polish", "Rosso Corsa", "Ivory"],
+      "detail": "308cm, 양산 그랜드 중 최장. 제4페달이 음량만 줄이고 음색은 유지합니다."
+    },
+    {
+      "id": "4",
+      "brand": "C. Bechstein",
+      "title": "D 282 Concert Grand",
+      "country": "Berlin, Germany",
+      "founded": 1853,
+      "price": 196000000,
+      "finish": "#241a15",
+      "choice": false,
+      "new": false,
+      "sizes": ["Ebony Polish", "White Polish"],
+      "detail": "드뷔시가 사랑한 음색. 투명하고 노래하는 중음역이 특징입니다."
+    },
+    {
+      "id": "5",
+      "brand": "Blüthner",
+      "title": "Model 1 Concert Grand",
+      "country": "Leipzig, Germany",
+      "founded": 1853,
+      "price": 178000000,
+      "finish": "#302019",
+      "choice": true,
+      "new": false,
+      "sizes": ["Ebony Polish", "Bubinga"],
+      "detail": "아리코트(Aliquot) 4현 시스템. 고음역에 울림현을 더해 여운을 남깁니다."
+    },
+    {
+      "id": "6",
+      "brand": "Shigeru Kawai",
+      "title": "SK-EX Concert Grand",
+      "country": "Ryuyo, Japan",
+      "founded": 1927,
+      "price": 152000000,
+      "finish": "#12100f",
+      "choice": false,
+      "new": true,
+      "sizes": ["Ebony Polish", "Sapele Mahogany"],
+      "detail": "마스터 피아노 아티산이 한 대씩 마감. 밀레니엄 III 액션을 탑재했습니다."
+    },
+    {
+      "id": "7",
+      "brand": "Steingraeber & Söhne",
+      "title": "E-272 Phoenix",
+      "country": "Bayreuth, Germany",
+      "founded": 1852,
+      "price": 205000000,
+      "finish": "#3a2417",
+      "choice": true,
+      "new": true,
+      "sizes": ["Ebony Polish", "Cherry"],
+      "detail": "바이로이트 공방의 수제작. 피닉스 브리지 시스템으로 배음 손실을 줄였습니다."
+    },
+    {
+      "id": "8",
+      "brand": "Yamaha",
+      "title": "CFX Concert Grand",
+      "country": "Hamamatsu, Japan",
+      "founded": 1887,
+      "price": 138000000,
+      "finish": "#17140f",
+      "choice": false,
+      "new": false,
+      "sizes": ["Ebony Polish"],
+      "detail": "쇼팽 콩쿠르 우승 연주에 쓰인 모델. 넓은 다이내믹 레인지가 강점입니다."
+    }
+  ]
+}
