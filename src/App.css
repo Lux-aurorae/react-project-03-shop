@@ -1,45 +1,57 @@
 /* ===========================================================
-   MAISON PIANO — 프랑스 럭셔리 메종 톤
+   MAISON PIANO — 프랑스 럭셔리 메종
    코냑 브라운 · 크림 · 얇은 금선 · 넓은 자간의 세리프
    =========================================================== */
 
 :root {
-  --cognac: #6b4423;      /* 코냑 브라운 — 브랜드 주색 */
+  --cognac: #6b4423;
   --cognac-deep: #4a2e17;
-  --cream: #f4f0e8;       /* 크림 — 바탕 */
+  --cream: #f4f0e8;
   --cream-warm: #ece5d8;
-  --gold: #b8964f;        /* 금선 */
+  --gold: #b8964f;
   --gold-dim: rgba(184, 150, 79, 0.32);
-  --ink: #1c1613;         /* 본문 */
+  --ink: #1c1613;
   --ink-dim: rgba(28, 22, 19, 0.55);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --pad: clamp(16px, 5vw, 56px);
 }
 
-body {
-  background: var(--cream);
-  color: var(--ink);
-}
+body { background: var(--cream); color: var(--ink); }
 
 /* ===========================================================
    네비게이션
    =========================================================== */
 .nav {
+  position: relative;
   background: var(--cream);
   border-bottom: 1px solid var(--gold-dim);
-  padding: 0 clamp(20px, 5vw, 56px);
+  padding: 0 var(--pad);
 }
 
-/* ── 1행 계정 ─────────────────────────────────── */
+/* ── 1행 ──────────────────────────────────────── */
 .nav__top {
   display: flex;
-  justify-content: flex-end;
-  padding: 12px 0;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* 햄버거는 모바일에서만 보입니다 */
+.nav__burger {
+  display: none;
+  padding: 6px 2px;
+  font-size: 1.05rem;
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .nav__account {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  margin-left: auto;
   padding: 6px 4px;
   background: none;
   border: none;
@@ -52,14 +64,11 @@ body {
 }
 
 .nav__account:hover { color: var(--cognac); }
-.nav__account:focus-visible { outline: 1px solid var(--cognac); outline-offset: 4px; }
+.nav__account:focus-visible,
+.nav__burger:focus-visible { outline: 1px solid var(--cognac); outline-offset: 4px; }
 
 /* ── 2행 로고 ─────────────────────────────────── */
-.nav__brand {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0 26px;
-}
+.nav__brand { display: flex; justify-content: center; padding: 6px 0 24px; }
 
 .nav__logo {
   display: flex;
@@ -70,24 +79,24 @@ body {
   color: var(--cognac);
 }
 
-.monogram { display: block; }
+.nav__logoimg { display: block; height: clamp(30px, 6vw, 44px); width: auto; }
 
 .nav__wordmark {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 500;
-  font-size: clamp(1.5rem, 5vw, 2.1rem);
-  letter-spacing: 0.34em;
-  text-indent: 0.34em;
+  font-size: clamp(1.4rem, 5vw, 2.1rem);
+  letter-spacing: 0.3em;
+  text-indent: 0.3em;
   line-height: 1;
-  color: var(--cognac);
 }
 
 .nav__tagline {
-  font-size: 0.56rem;
-  letter-spacing: 0.26em;
-  text-indent: 0.26em;
+  font-size: 0.54rem;
+  letter-spacing: 0.24em;
+  text-indent: 0.24em;
   text-transform: uppercase;
   color: var(--ink-dim);
+  text-align: center;
 }
 
 /* ── 3행 메뉴 + 검색 ──────────────────────────── */
@@ -96,35 +105,26 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-bottom: 16px;
+  padding-bottom: 14px;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2px;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;   /* 불릿 제거 */
-}
+.menu { display: flex; flex-wrap: wrap; gap: 2px; margin: 0; padding: 0; list-style-type: none; }
 
 .menu__item {
   position: relative;
-  padding: 8px 14px;
-  font-size: 0.76rem;
-  letter-spacing: 0.06em;
+  display: block;
+  padding: 8px 13px;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
   color: var(--ink);
-  cursor: pointer;
+  text-decoration: none;
   transition: color 0.3s var(--ease);
 }
 
-/* 밑줄이 가운데에서 양옆으로 자라는 효과 */
 .menu__item::after {
   content: "";
   position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 3px;
+  left: 13px; right: 13px; bottom: 3px;
   height: 1px;
   background: var(--cognac);
   transform: scaleX(0);
@@ -146,12 +146,7 @@ body {
 }
 
 .search:focus-within { border-color: var(--cognac); }
-
-.search__icon {
-  font-size: 0.72rem;
-  color: var(--ink-dim);
-  pointer-events: none;
-}
+.search__icon { font-size: 0.72rem; color: var(--ink-dim); pointer-events: none; }
 
 .search__input {
   flex: 1;
@@ -159,7 +154,6 @@ body {
   padding: 8px 0 8px 10px;
   font-family: inherit;
   font-size: 0.74rem;
-  letter-spacing: 0.04em;
   color: var(--ink);
   background: none;
   border: none;
@@ -169,38 +163,95 @@ body {
 .search__input:focus { outline: none; }
 
 /* ===========================================================
-   페이지 영역
+   모바일 사이드 메뉴
    =========================================================== */
-.page {
-  padding: clamp(28px, 6vw, 60px) clamp(20px, 5vw, 56px);
-  min-height: 60vh;
+.scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(28, 22, 19, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s var(--ease), visibility 0.35s;
 }
+
+.scrim--on { opacity: 1; visibility: visible; }
+
+.drawer {
+  position: fixed;
+  top: 0; left: 0; bottom: 0;
+  z-index: 50;
+  width: min(300px, 82vw);
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  background: var(--cream);
+  border-right: 1px solid var(--gold-dim);
+  transform: translateX(-100%);
+  transition: transform 0.4s var(--ease);
+  overflow-y: auto;
+}
+
+.drawer--on { transform: translateX(0); }
+
+.drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--gold-dim);
+}
+
+.drawer__title {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+}
+
+.drawer__close {
+  padding: 4px 8px;
+  font-size: 1.1rem;
+  color: var(--ink);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.drawer__list { flex: 1; margin: 0; padding: 14px 0 0; list-style: none; }
+
+.drawer__link {
+  display: block;
+  padding: 15px 2px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(184, 150, 79, 0.16);
+  transition: color 0.3s var(--ease), padding-left 0.3s var(--ease);
+}
+
+.drawer__link:hover { color: var(--cognac); padding-left: 8px; }
+
+.drawer__foot { padding-top: 20px; }
+.drawer__foot .btn { width: 100%; }
 
 /* ===========================================================
-   반응형
+   페이지 · 배너 · 히어로
    =========================================================== */
-@media (max-width: 720px) {
-  .nav__bottom { flex-direction: column; align-items: stretch; gap: 14px; }
-  .menu { justify-content: center; }
-  .search { width: 100%; }
-  .nav__wordmark { letter-spacing: 0.22em; text-indent: 0.22em; }
+.page { padding: clamp(24px, 6vw, 60px) var(--pad); min-height: 60vh; }
+
+.banner {
+  margin: 0 0 clamp(28px, 6vw, 54px);
+  aspect-ratio: 21 / 8;
+  overflow: hidden;
+  border: 1px solid var(--gold-dim);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+.banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-/* ===========================================================
-   히어로
-   =========================================================== */
-.hero {
-  max-width: 620px;
-  margin: 0 auto clamp(36px, 7vw, 64px);
-  text-align: center;
-}
+.hero { max-width: 620px; margin: 0 auto clamp(26px, 5vw, 40px); text-align: center; }
 
 .hero__eyebrow {
   margin: 0 0 14px;
@@ -215,19 +266,47 @@ body {
   margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 300;
-  font-size: clamp(1.9rem, 6vw, 2.9rem);
-  letter-spacing: 0.04em;
-  line-height: 1.25;
+  font-size: clamp(1.7rem, 6vw, 2.9rem);
+  letter-spacing: 0.03em;
+  line-height: 1.28;
   color: var(--cognac-deep);
 }
 
 .hero__lead {
-  margin: 18px auto 0;
+  margin: 16px auto 0;
   max-width: 46ch;
-  font-size: 0.86rem;
+  font-size: 0.84rem;
   line-height: 1.9;
   color: var(--ink-dim);
 }
+
+/* ===========================================================
+   카테고리 필터
+   =========================================================== */
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: clamp(24px, 5vw, 40px);
+}
+
+.filter {
+  padding: 9px 20px;
+  font-family: inherit;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-dim);
+  background: transparent;
+  border: 1px solid var(--gold-dim);
+  cursor: pointer;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease),
+    background 0.3s var(--ease);
+}
+
+.filter:hover { color: var(--cognac); border-color: var(--cognac); }
+.filter--on { color: var(--cream); background: var(--cognac); border-color: var(--cognac); }
+.filter:focus-visible { outline: 1px solid var(--cognac); outline-offset: 3px; }
 
 /* ===========================================================
    상품 그리드
@@ -238,14 +317,9 @@ body {
   gap: clamp(16px, 2.4vw, 30px);
 }
 
-/* ── 카드 ─────────────────────────────────────── */
-.card {
-  cursor: pointer;
-  background: transparent;
-  transition: transform 0.5s var(--ease);
-}
+.card { cursor: pointer; background: transparent; transition: transform 0.5s var(--ease); }
 
-/* [검사 3] 마우스를 올리면 카드가 커집니다 */
+/* 마우스를 올리면 카드가 커집니다 */
 .card:hover { transform: translateY(-8px) scale(1.035); }
 
 .card__art {
@@ -253,31 +327,22 @@ body {
   aspect-ratio: 4 / 3;
   display: grid;
   place-items: center;
-  padding: 12px;
   background: var(--cream-warm);
   border: 1px solid transparent;
   overflow: hidden;
   transition: background 0.5s var(--ease), border-color 0.5s var(--ease);
 }
 
-.card:hover .card__art {
-  background: #f8f5ee;
-  border-color: var(--gold-dim);
-}
+.card:hover .card__art { border-color: var(--gold-dim); }
 
-.art {
-  width: 100%;
-  height: auto;
-  transition: transform 0.6s var(--ease);
-}
-
+.art { width: 100%; height: auto; transition: transform 0.6s var(--ease); }
+.art--photo { width: 100%; height: 100%; object-fit: cover; display: block; }
 .card:hover .art { transform: scale(1.06); }
 
 /* ── 배지 ─────────────────────────────────────── */
 .card__badges {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 12px; left: 12px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -298,13 +363,7 @@ body {
 
 .badge--choice { color: #3f6b47; }
 .badge--new { color: var(--cognac); border-color: var(--cognac); }
-
-.badge__dot {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #4d8257;
-}
+.badge__dot { width: 5px; height: 5px; border-radius: 50%; background: #4d8257; }
 
 /* ── 카드 본문 ────────────────────────────────── */
 .card__body { padding: 16px 2px 0; }
@@ -323,15 +382,9 @@ body {
   font-weight: 400;
   font-size: 1.08rem;
   line-height: 1.35;
-  letter-spacing: 0.01em;
 }
 
-.card__origin {
-  margin: 6px 0 0;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-  color: var(--ink-dim);
-}
+.card__origin { margin: 6px 0 0; font-size: 0.68rem; color: var(--ink-dim); }
 
 .card__price {
   margin: 12px 0 0;
@@ -359,118 +412,19 @@ body {
 
 .empty {
   grid-column: 1 / -1;
-  padding: 40px 0;
+  padding: 50px 0;
   text-align: center;
   font-size: 0.86rem;
   color: var(--ink-dim);
 }
-
-/* ===========================================================
-   로그인
-   =========================================================== */
-.login {
-  max-width: 380px;
-  margin: 0 auto;
-  padding: clamp(20px, 5vw, 40px) 0;
-}
-
-.login__head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: var(--cognac);
-  margin-bottom: 34px;
-}
-
-.login__title {
-  margin: 14px 0 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 400;
-  font-size: 1.7rem;
-  letter-spacing: 0.18em;
-  text-indent: 0.18em;
-}
-
-.login__lead {
-  margin: 12px 0 0;
-  font-size: 0.76rem;
-  line-height: 1.9;
-  color: var(--ink-dim);
-}
-
-.login__form { display: flex; flex-direction: column; gap: 20px; }
-
-.field { display: flex; flex-direction: column; gap: 8px; }
-
-.field__label {
-  font-size: 0.58rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.field__input {
-  padding: 10px 2px;
-  font-size: 0.86rem;
-  color: var(--ink);
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--gold-dim);
-  transition: border-color 0.3s var(--ease);
-}
-
-.field__input::placeholder { color: rgba(28, 22, 19, 0.32); }
-.field__input:focus { outline: none; border-color: var(--cognac); }
-
-.check {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 0.72rem;
-  color: var(--ink-dim);
-  cursor: pointer;
-}
-
-.check input { accent-color: var(--cognac); cursor: pointer; }
-
-.login__note {
-  margin: 0;
-  font-size: 0.66rem;
-  line-height: 1.7;
-  text-align: center;
-  color: var(--ink-dim);
-}
-
-/* ===========================================================
-   버튼
-   =========================================================== */
-.btn {
-  padding: 13px 30px;
-  font-family: inherit;
-  font-size: 0.74rem;
-  letter-spacing: 0.22em;
-  text-indent: 0.22em;
-  color: var(--cognac);
-  background: transparent;
-  border: 1px solid var(--cognac);
-  cursor: pointer;
-  transition: background 0.35s var(--ease), color 0.35s var(--ease);
-}
-
-.btn:hover { background: var(--cognac); color: var(--cream); }
-.btn:focus-visible { outline: 1px solid var(--cognac); outline-offset: 4px; }
-
-.btn--fill { background: var(--cognac); color: var(--cream); }
-.btn--fill:hover { background: var(--cognac-deep); border-color: var(--cognac-deep); }
 
 /* ===========================================================
    상세 페이지
    =========================================================== */
-.detail { max-width: 940px; margin: 0 auto; }
+.detail { max-width: 1000px; margin: 0 auto; }
 
 .crumb {
-  margin-bottom: 26px;
+  margin-bottom: 24px;
   padding: 0;
   font-family: inherit;
   font-size: 0.7rem;
@@ -492,15 +446,18 @@ body {
 }
 
 .detail__art {
+  aspect-ratio: 4 / 3;
   display: grid;
   place-items: center;
-  padding: 26px;
+  overflow: hidden;
   background: var(--cream-warm);
   border: 1px solid var(--gold-dim);
 }
 
+.detail__badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+
 .detail__brand {
-  margin: 16px 0 0;
+  margin: 0;
   font-size: 0.6rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -511,18 +468,14 @@ body {
   margin: 10px 0 0;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-weight: 400;
-  font-size: clamp(1.5rem, 4.5vw, 2.1rem);
+  font-size: clamp(1.5rem, 5vw, 2.1rem);
   line-height: 1.25;
 }
 
-.detail__origin {
-  margin: 8px 0 0;
-  font-size: 0.72rem;
-  color: var(--ink-dim);
-}
+.detail__origin { margin: 8px 0 0; font-size: 0.72rem; color: var(--ink-dim); }
 
 .detail__price {
-  margin: 22px 0 0;
+  margin: 20px 0 0;
   padding-top: 18px;
   border-top: 1px solid var(--gold-dim);
   font-size: 1rem;
@@ -530,27 +483,148 @@ body {
   color: var(--cognac);
 }
 
-.detail__text {
-  margin: 16px 0 0;
-  font-size: 0.82rem;
-  line-height: 1.95;
-  color: var(--ink-dim);
-}
+.detail__text { margin: 14px 0 0; font-size: 0.82rem; line-height: 1.95; color: var(--ink-dim); }
 
-.detail__finish { margin: 26px 0; }
+.detail__block { margin: 24px 0; }
 
 .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
 
 .chip {
-  padding: 7px 14px;
+  padding: 8px 15px;
+  font-family: inherit;
   font-size: 0.68rem;
   letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  background: transparent;
   border: 1px solid var(--gold-dim);
   cursor: pointer;
-  transition: border-color 0.3s var(--ease), color 0.3s var(--ease);
+  transition: border-color 0.3s var(--ease), color 0.3s var(--ease),
+    background 0.3s var(--ease);
 }
 
 .chip:hover { border-color: var(--cognac); color: var(--cognac); }
+.chip--on { color: var(--cream); background: var(--cognac); border-color: var(--cognac); }
+
+.detail__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+
+.detail__note {
+  margin: 14px 0 0;
+  padding: 12px 14px;
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--cognac);
+  background: var(--cream-warm);
+  border-left: 2px solid var(--gold);
+}
+
+/* ===========================================================
+   스토리 페이지
+   =========================================================== */
+.story { max-width: 1000px; margin: 0 auto; }
+
+.story__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(14px, 3vw, 28px);
+}
+
+.story__fig { margin: 0; border: 1px solid var(--gold-dim); overflow: hidden; }
+
+.story__fig img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* ===========================================================
+   로그인
+   =========================================================== */
+.login { max-width: 380px; margin: 0 auto; padding: clamp(16px, 5vw, 40px) 0; }
+
+.login__head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--cognac);
+  margin-bottom: 32px;
+}
+
+.login__title {
+  margin: 14px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  letter-spacing: 0.18em;
+  text-indent: 0.18em;
+}
+
+.login__lead { margin: 12px 0 0; font-size: 0.76rem; line-height: 1.9; color: var(--ink-dim); }
+
+.login__form { display: flex; flex-direction: column; gap: 20px; }
+
+.field { display: flex; flex-direction: column; gap: 8px; }
+
+.field__label {
+  margin: 0;
+  font-size: 0.58rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.field__input {
+  padding: 11px 2px;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--gold-dim);
+  transition: border-color 0.3s var(--ease);
+}
+
+.field__input::placeholder { color: rgba(28, 22, 19, 0.32); }
+.field__input:focus { outline: none; border-color: var(--cognac); }
+
+.check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.72rem;
+  color: var(--ink-dim);
+  cursor: pointer;
+}
+
+.check input { accent-color: var(--cognac); cursor: pointer; }
+
+.login__note { margin: 0; font-size: 0.66rem; line-height: 1.7; text-align: center; color: var(--ink-dim); }
+
+/* ===========================================================
+   버튼
+   =========================================================== */
+.btn {
+  padding: 13px 28px;
+  font-family: inherit;
+  font-size: 0.74rem;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
+  color: var(--cognac);
+  background: transparent;
+  border: 1px solid var(--cognac);
+  cursor: pointer;
+  transition: background 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+.btn:hover { background: var(--cognac); color: var(--cream); }
+.btn:focus-visible { outline: 1px solid var(--cognac); outline-offset: 4px; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.btn:disabled:hover { background: transparent; color: var(--cognac); }
+
+.btn--fill { background: var(--cognac); color: var(--cream); }
+.btn--fill:hover { background: var(--cognac-deep); border-color: var(--cognac-deep); }
+.btn--fill:disabled:hover { background: var(--cognac); color: var(--cream); }
 
 /* ===========================================================
    푸터
@@ -560,7 +634,7 @@ body {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 28px clamp(20px, 5vw, 56px);
+  padding: 26px var(--pad);
   border-top: 1px solid var(--gold-dim);
   font-size: 0.6rem;
   letter-spacing: 0.2em;
@@ -575,11 +649,34 @@ body {
   .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 760px) {
+/* 태블릿 이하 — 메뉴를 사이드로 보내고 햄버거를 띄웁니다 */
+@media (max-width: 860px) {
+  .nav__burger { display: block; }
+  .nav__menu { display: none; }
+  .nav__bottom { justify-content: center; padding-bottom: 16px; }
+  .search { width: 100%; max-width: 420px; }
   .grid { grid-template-columns: repeat(2, 1fr); }
-  .detail__grid { grid-template-columns: 1fr; }
+  .detail__grid { grid-template-columns: 1fr; gap: 26px; }
+  .detail__actions .btn { flex: 1 1 auto; }
 }
 
-@media (max-width: 420px) {
-  .grid { grid-template-columns: 1fr; gap: 26px; }
+/* 모바일 — 제품 사진이 한 장씩 세로로 나옵니다 */
+@media (max-width: 620px) {
+  .grid { grid-template-columns: 1fr; gap: 30px; }
+  .card:hover { transform: translateY(-4px) scale(1.01); }
+  .card__art { aspect-ratio: 16 / 10; }
+  .story__grid { grid-template-columns: 1fr; }
+  .banner { aspect-ratio: 16 / 9; }
+  .foot { flex-direction: column; align-items: center; text-align: center; }
+  .detail__actions { flex-direction: column; }
+  .detail__actions .btn { width: 100%; }
+  .filters { gap: 6px; }
+  .filter { padding: 8px 14px; font-size: 0.68rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
