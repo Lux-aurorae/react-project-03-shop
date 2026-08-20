@@ -1,27 +1,30 @@
-/* Grand-piano */
-<img width="2752" height="1536" alt="검정(새디자인)" src="https://github.com/user-attachments/assets/72a38a2e-65e1-4fe2-9035-b2aa1d4ace28" />
-<img width="2752" height="1536" alt="청록(새디자인)" src="https://github.com/user-attachments/assets/8aa72b33-da6d-4d0e-81bd-345b0bfe9a91" />
-<img width="2752" height="1536" alt="갈색" src="https://github.com/user-attachments/assets/8d0718be-7d69-458b-8351-bb2c813aaf3d" />
-<img width="2752" height="1536" alt="청록색" src="https://github.com/user-attachments/assets/0e26708b-f9fa-45b4-9c0e-62ad390c45cf" />
-<img width="2752" height="1536" alt="버건디" src="https://github.com/user-attachments/assets/977988b3-82f8-4174-8d63-8f05a3ad8e70" />
-<img width="2752" height="1536" alt="바이올렛" src="https://github.com/user-attachments/assets/ca6b5c6c-1f90-41a0-826d-d61fc97e5ece" />
-<img width="2752" height="1536" alt="로얄네이비" src="https://github.com/user-attachments/assets/7c07f57c-ead4-482d-9f82-82d7c2655273" />
-<img width="2752" height="1536" alt="검정" src="https://github.com/user-attachments/assets/6b6e5c00-80c1-4a08-941a-406f864b7c04" />
+/* grand-piano */
+
+<img width="800" height="600" alt="13_Grand_Piano_Golden_Beryl_800x600" src="https://github.com/user-attachments/assets/8c79c015-7a2a-4da4-9662-4821929341dd" />
+<img width="800" height="600" alt="12_Grand_Piano_Turquoise_800x600" src="https://github.com/user-attachments/assets/87fe38d7-d758-481f-bcc6-9840014d5e22" />
+<img width="800" height="600" alt="09_Grand_Piano_Navy_800x600" src="https://github.com/user-attachments/assets/078d8fcb-99a4-435b-957c-bd846948d0ff" />
+<img width="800" height="600" alt="08_Grand_Piano_Violet_800x600" src="https://github.com/user-attachments/assets/ba955edc-1371-4ba5-8bb9-37f25698a66f" />
+<img width="800" height="600" alt="10_Grand_Piano_Green_Blue_800x600" src="https://github.com/user-attachments/assets/6edee2f3-8450-40cc-a1ce-7498a1521b17" />
+<img width="800" height="600" alt="11_Grand_Piano_Royal_Burgundy_800x600" src="https://github.com/user-attachments/assets/4e678e34-f36a-4a4d-9380-6efa6eb9fb47" />
+<img width="800" height="600" alt="02_Grand_Piano_Black_800x600" src="https://github.com/user-attachments/assets/132ada42-9eb7-45c6-a952-e97e05ad2e26" />
 
 /* upright-piano */
-<img width="2048" height="2048" alt="up_갈색" src="https://github.com/user-attachments/assets/dba61fc4-f242-48dc-a498-4bbfc6f8fa40" />
-<img width="2048" height="2048" alt="up_검정" src="https://github.com/user-attachments/assets/2dc032b1-19e9-4536-85b9-1def17d5951e" />
-<img width="2816" height="1536" alt="up_네이비" src="https://github.com/user-attachments/assets/212bbbba-e07e-44c9-9b66-8a8b00a8a174" />
+
+<img width="800" height="600" alt="07_Upright_Piano_Navy_Rome_800x600" src="https://github.com/user-attachments/assets/adb588ea-5e08-44b9-be41-07a0863d0eb6" />
+<img width="800" height="600" alt="03_Upright_Piano_Walnut_800x600" src="https://github.com/user-attachments/assets/75bfaab1-ed12-48c6-aa50-984fc9036209" />
+<img width="800" height="600" alt="06_Upright_Piano_Green_800x600" src="https://github.com/user-attachments/assets/6131fd25-9b71-4ab8-83ca-346507edecc3" />
+<img width="800" height="600" alt="05_Upright_Piano_Black_800x600" src="https://github.com/user-attachments/assets/266fd292-430f-43a7-a34c-f47f6d46810a" />
 
 /* atelier */
-<img width="2752" height="1536" alt="Atl2" src="https://github.com/user-attachments/assets/ca8361c2-a611-48b0-83b0-f0a044d003f4" />
-<img width="2752" height="1536" alt="Atl1" src="https://github.com/user-attachments/assets/3d161dbd-5236-40fc-a638-0b35a4b9edce" />
+
+<img width="800" height="600" alt="Atl2" src="https://github.com/user-attachments/assets/ca8361c2-a611-48b0-83b0-f0a044d003f4" />
+<img width="800" height="600" alt="Atl1" src="https://github.com/user-attachments/assets/3d161dbd-5236-40fc-a638-0b35a4b9edce" />
 
 /* Maison Story */
-<img width="1792" height="2400" alt="Patron" src="https://github.com/user-attachments/assets/03f4b115-ab7a-4f9b-9eeb-6bb3b6b624bd" />
+
+<img width="800" height="600" alt="maison" src="https://github.com/user-attachments/assets/1f6ec246-c09c-4f86-830a-f6b9ef55fc72" />
+<img width="800" height="600" alt="브랜드 스토리" src="https://github.com/user-attachments/assets/f178e918-c74a-4404-b52d-6ff5f4b2cde2" />
 
 /* collection */
-<img width="1696" height="2528" alt="Highend product" src="https://github.com/user-attachments/assets/79962885-fa85-49d9-babf-0749a2eb885a" />
 
-/* brand-story */
-<img width="2016" height="2098" alt="BrandStory" src="https://github.com/user-attachments/assets/8e173f71-b92d-4485-8d84-e782a9ce9e27" />
+<img width="800" height="600" alt="17_Collection_Reproducing_Piano_2_800x600" src="https://github.com/user-attachments/assets/8d25757c-0be2-4977-8746-3700ef926bd6" />

@@ -1,4 +1,4 @@
-import { ATELIER_IMAGES, STORY_IMAGE, BRAND_IMAGE } from "../constants/brand.js";
+import { ATELIER_IMAGES, STORY_IMAGE, BRAND_IMAGE, COLLECTION_IMAGE } from "../constants/brand.js";
 
 // 아틀리에 / 메종 스토리 페이지. kind 값으로 내용을 바꿉니다. (추가 기능)
 function StoryPage({ kind = "atelier" }) {
@@ -17,7 +17,10 @@ function StoryPage({ kind = "atelier" }) {
       </header>
 
       <div className="story__grid">
-        {(isAtelier ? ATELIER_IMAGES : [STORY_IMAGE, BRAND_IMAGE]).map((src) => (
+        {(isAtelier
+          ? [...ATELIER_IMAGES, COLLECTION_IMAGE]
+          : [STORY_IMAGE, BRAND_IMAGE]
+        ).map((src) => (
           <figure key={src} className="story__fig">
             <img src={src} alt="" loading="lazy" />
           </figure>
